@@ -1,0 +1,31 @@
+describe('actions spec', () => {
+  beforeEach(() => {
+    cy.visit('https://by-portal-shopping-cart-new.spnode.net/external/')
+  })
+  it('actions', () => {
+    cy.get('[data-automation-id="subscription_p_select_btn"]').eq(0).click()
+    cy.get('[data-automation-id="step_title"]')
+  })
+  it('actions', () => {
+    cy.get('[data-automation-id="subscription_p_select_btn"]').eq(0).click()
+    cy.get('div').filter(':contains("Total:")').parent('div').find('button')
+
+    cy.get('[]').click()
+    cy.get('[name="userName"]').type('Username441')
+    cy.get('[name="email"]').type('Email@test.com')
+    cy.get('[name="password"]').type('121212')
+    cy.get('[name="confirmPassword"]').type('121212')
+    cy.get('[name="firstName"]').type('First_Name')
+    cy.get('[name="lastName"]').type('Last_Name')
+    cy.get('[name="phone"]').type('443212544')
+    cy.get('[name="address"]').type('Address')
+    cy.get('[name="country"]').click()
+    cy.contains('Albania').click({ force: true })
+    cy.get('[name="city"]').type('City')
+    cy.get('[name="state"]').type('State')
+    cy.get('[name="zipCode"]').type('44321')
+    cy.get('[data-automation-id="step_btn_2"]').click()
+    cy.get('[data-automation-id="step_btn_1"]').click()
+    cy.get('[data-automation-id="step_title"]')
+  })
+})
